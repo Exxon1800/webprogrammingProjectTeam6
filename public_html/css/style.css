@@ -353,11 +353,16 @@ body.sidebar-closed .content {
 
 /* Modal Content */
 .modal-content {
-    background-color: #fefefe;
+    background-color: #373f52;
+    color: white;
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
     width: 350px;
+}
+
+.modal-content a{
+    color:white;
+    
 }
 
 /* The Close Button */
