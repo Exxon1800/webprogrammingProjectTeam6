@@ -81,38 +81,44 @@
                         <li><a id="loginButton" onclick="loginPopup();">Login</a></li>
                         <li><a href="">sign up</a></li>
                     </ul>
-            </section>
-        </div>
 
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
+                    <!-- The Modal -->
 
-            <!-- Modal content -->
-            <div class="modal-content">
-                <span class="close" onclick="closeLogin();">&times;</span>
-                <h3 style="margin-top:0;">Login</h3>
+                    <div id="myModal" class="modal">
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close" onclick="closeLogin();">&times;</span>
+                            <h3 style="margin-top:0;">Login</h3>
 
-                <div class="loginPopup">
-                    <form>
-                        <span>
-                            <label>Email:</label>
-                            <input class="loginInput" type="email" name="email" id="email" placeholder="Email" required>
-                        </span>
-                        <br/><br/>
-                        <span>
-                            <label>Password:</label>
-                            <input class="loginInput" type="password" name="password" id="password" placeholder="Password" required>    
-                        </span>
-                        <br/><br/>
-                        <div >
-                            <input type="submit" value="Log In" id="loginButton">
+                            <div class="loginPopup">
+                                <form>
+                                    <span>
+                                        <label>Email:</label>
+                                        <input class="loginInput" type="email" name="email" id="email" placeholder="Email" required>
+                                    </span>
+                                    <br/><br/>
+                                    <span>
+                                        <label>Password:</label>
+                                        <input class="loginInput" type="password" name="password" id="password" placeholder="Password" required>    
+                                    </span>
+                                    <br/><br/>
+                                    <div >
+                                        <input type="submit" value="Log In" id="loginButton">
+                                    </div>
+
+                                    <h6 style="margin:10px 0px 0px 0px;"><a href="#" id="recovery">Forgotten account?</a></h6>
+                                </form>
+                            </div>
                         </div>
-                        
-                        <h6 style="margin:10px 0px 0px 0px;"><a href="#" id="recovery">Forgotten account?</a></h6>
-                    </form>
+                    </div>
                 </div>
-            </div>
 
-        </div>
+                <div class="content-outer">
+                    <div id="content" class="content-inner">
+                        <h1> Words </h1>
+                    </div>
+                </div>
+            </section>
+        </div>  
     </body>
 </html>
