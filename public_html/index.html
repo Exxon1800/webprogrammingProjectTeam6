@@ -1,94 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Woodle</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
-    <script src="index.js"> </script>
-  </head>
-  <body>
-    <div id="wrapper">
+    <head>
+        <title>Woodle</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="login.js" type="text/javascript"></script>
+        <script src="index.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div id="wrapper">
 
-       <button class="sidebar-toggle">
-        <i class="icon-menu"></i> 
-       </button> 
+            <button class="sidebar-toggle">
+                <i class="icon-menu"></i> 
+            </button> 
 
-       <aside class="sidebar">
-        <a href="#" class="sidebar-link">
-          <img alt="" id="logo" width="200" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNzIgOTIiIHdpZHRoPSIyNzIiIGhlaWdodD0iOTIiPjxwYXRoIGZpbGw9IiNFQTQzMzUiIGQ9Ik0xMTUuNzUgNDcuMThjMCAxMi43Ny05Ljk5IDIyLjE4LTIyLjI1IDIyLjE4cy0yMi4yNS05LjQxLTIyLjI1LTIyLjE4QzcxLjI1IDM0LjMyIDgxLjI0IDI1IDkzLjUgMjVzMjIuMjUgOS4zMiAyMi4yNSAyMi4xOHptLTkuNzQgMGMwLTcuOTgtNS43OS0xMy40NC0xMi41MS0xMy40NFM4MC45OSAzOS4yIDgwLjk5IDQ3LjE4YzAgNy45IDUuNzkgMTMuNDQgMTIuNTEgMTMuNDRzMTIuNTEtNS41NSAxMi41MS0xMy40NHoiLz48cGF0aCBmaWxsPSIjRkJCQzA1IiBkPSJNMTYzLjc1IDQ3LjE4YzAgMTIuNzctOS45OSAyMi4xOC0yMi4yNSAyMi4xOHMtMjIuMjUtOS40MS0yMi4yNS0yMi4xOGMwLTEyLjg1IDkuOTktMjIuMTggMjIuMjUtMjIuMThzMjIuMjUgOS4zMiAyMi4yNSAyMi4xOHptLTkuNzQgMGMwLTcuOTgtNS43OS0xMy40NC0xMi41MS0xMy40NHMtMTIuNTEgNS40Ni0xMi41MSAxMy40NGMwIDcuOSA1Ljc5IDEzLjQ0IDEyLjUxIDEzLjQ0czEyLjUxLTUuNTUgMTIuNTEtMTMuNDR6Ii8+PHBhdGggZmlsbD0iIzQyODVGNCIgZD0iTTIwOS43NSAyNi4zNHYzOS44MmMwIDE2LjM4LTkuNjYgMjMuMDctMjEuMDggMjMuMDctMTAuNzUgMC0xNy4yMi03LjE5LTE5LjY2LTEzLjA3bDguNDgtMy41M2MxLjUxIDMuNjEgNS4yMSA3Ljg3IDExLjE3IDcuODcgNy4zMSAwIDExLjg0LTQuNTEgMTEuODQtMTN2LTMuMTloLS4zNGMtMi4xOCAyLjY5LTYuMzggNS4wNC0xMS42OCA1LjA0LTExLjA5IDAtMjEuMjUtOS42Ni0yMS4yNS0yMi4wOSAwLTEyLjUyIDEwLjE2LTIyLjI2IDIxLjI1LTIyLjI2IDUuMjkgMCA5LjQ5IDIuMzUgMTEuNjggNC45NmguMzR2LTMuNjFoOS4yNXptLTguNTYgMjAuOTJjMC03LjgxLTUuMjEtMTMuNTItMTEuODQtMTMuNTItNi43MiAwLTEyLjM1IDUuNzEtMTIuMzUgMTMuNTIgMCA3LjczIDUuNjMgMTMuMzYgMTIuMzUgMTMuMzYgNi42MyAwIDExLjg0LTUuNjMgMTEuODQtMTMuMzZ6Ii8+PHBhdGggZmlsbD0iIzM0QTg1MyIgZD0iTTIyNSAzdjY1aC05LjVWM2g5LjV6Ii8+PHBhdGggZmlsbD0iI0VBNDMzNSIgZD0iTTI2Mi4wMiA1NC40OGw3LjU2IDUuMDRjLTIuNDQgMy42MS04LjMyIDkuODMtMTguNDggOS44My0xMi42IDAtMjIuMDEtOS43NC0yMi4wMS0yMi4xOCAwLTEzLjE5IDkuNDktMjIuMTggMjAuOTItMjIuMTggMTEuNTEgMCAxNy4xNCA5LjE2IDE4Ljk4IDE0LjExbDEuMDEgMi41Mi0yOS42NSAxMi4yOGMyLjI3IDQuNDUgNS44IDYuNzIgMTAuNzUgNi43MiA0Ljk2IDAgOC40LTIuNDQgMTAuOTItNi4xNHptLTIzLjI3LTcuOThsMTkuODItOC4yM2MtMS4wOS0yLjc3LTQuMzctNC43LTguMjMtNC43LTQuOTUgMC0xMS44NCA0LjM3LTExLjU5IDEyLjkzeiIvPjxwYXRoIGZpbGw9IiM0Mjg1RjQiIGQ9Ik0zNS4yOSA0MS40MVYzMkg2N2MuMzEgMS42NC40NyAzLjU4LjQ3IDUuNjggMCA3LjA2LTEuOTMgMTUuNzktOC4xNSAyMi4wMS02LjA1IDYuMy0xMy43OCA5LjY2LTI0LjAyIDkuNjZDMTYuMzIgNjkuMzUuMzYgNTMuODkuMzYgMzQuOTEuMzYgMTUuOTMgMTYuMzIuNDcgMzUuMy40N2MxMC41IDAgMTcuOTggNC4xMiAyMy42IDkuNDlsLTYuNjQgNi42NGMtNC4wMy0zLjc4LTkuNDktNi43Mi0xNi45Ny02LjcyLTEzLjg2IDAtMjQuNyAxMS4xNy0yNC43IDI1LjAzIDAgMTMuODYgMTAuODQgMjUuMDMgMjQuNyAyNS4wMyA4Ljk5IDAgMTQuMTEtMy42MSAxNy4zOS02Ljg5IDIuNjYtMi42NiA0LjQxLTYuNDYgNS4xLTExLjY1bC0yMi40OS4wMXoiLz48L3N2Zz4=">
-        </a>
+            <aside class="sidebar">
+                <a href="#" class="sidebar-link">
+                    <img alt="" id="logo" width="200" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNzIgOTIiIHdpZHRoPSIyNzIiIGhlaWdodD0iOTIiPjxwYXRoIGZpbGw9IiNFQTQzMzUiIGQ9Ik0xMTUuNzUgNDcuMThjMCAxMi43Ny05Ljk5IDIyLjE4LTIyLjI1IDIyLjE4cy0yMi4yNS05LjQxLTIyLjI1LTIyLjE4QzcxLjI1IDM0LjMyIDgxLjI0IDI1IDkzLjUgMjVzMjIuMjUgOS4zMiAyMi4yNSAyMi4xOHptLTkuNzQgMGMwLTcuOTgtNS43OS0xMy40NC0xMi41MS0xMy40NFM4MC45OSAzOS4yIDgwLjk5IDQ3LjE4YzAgNy45IDUuNzkgMTMuNDQgMTIuNTEgMTMuNDRzMTIuNTEtNS41NSAxMi41MS0xMy40NHoiLz48cGF0aCBmaWxsPSIjRkJCQzA1IiBkPSJNMTYzLjc1IDQ3LjE4YzAgMTIuNzctOS45OSAyMi4xOC0yMi4yNSAyMi4xOHMtMjIuMjUtOS40MS0yMi4yNS0yMi4xOGMwLTEyLjg1IDkuOTktMjIuMTggMjIuMjUtMjIuMThzMjIuMjUgOS4zMiAyMi4yNSAyMi4xOHptLTkuNzQgMGMwLTcuOTgtNS43OS0xMy40NC0xMi41MS0xMy40NHMtMTIuNTEgNS40Ni0xMi41MSAxMy40NGMwIDcuOSA1Ljc5IDEzLjQ0IDEyLjUxIDEzLjQ0czEyLjUxLTUuNTUgMTIuNTEtMTMuNDR6Ii8+PHBhdGggZmlsbD0iIzQyODVGNCIgZD0iTTIwOS43NSAyNi4zNHYzOS44MmMwIDE2LjM4LTkuNjYgMjMuMDctMjEuMDggMjMuMDctMTAuNzUgMC0xNy4yMi03LjE5LTE5LjY2LTEzLjA3bDguNDgtMy41M2MxLjUxIDMuNjEgNS4yMSA3Ljg3IDExLjE3IDcuODcgNy4zMSAwIDExLjg0LTQuNTEgMTEuODQtMTN2LTMuMTloLS4zNGMtMi4xOCAyLjY5LTYuMzggNS4wNC0xMS42OCA1LjA0LTExLjA5IDAtMjEuMjUtOS42Ni0yMS4yNS0yMi4wOSAwLTEyLjUyIDEwLjE2LTIyLjI2IDIxLjI1LTIyLjI2IDUuMjkgMCA5LjQ5IDIuMzUgMTEuNjggNC45NmguMzR2LTMuNjFoOS4yNXptLTguNTYgMjAuOTJjMC03LjgxLTUuMjEtMTMuNTItMTEuODQtMTMuNTItNi43MiAwLTEyLjM1IDUuNzEtMTIuMzUgMTMuNTIgMCA3LjczIDUuNjMgMTMuMzYgMTIuMzUgMTMuMzYgNi42MyAwIDExLjg0LTUuNjMgMTEuODQtMTMuMzZ6Ii8+PHBhdGggZmlsbD0iIzM0QTg1MyIgZD0iTTIyNSAzdjY1aC05LjVWM2g5LjV6Ii8+PHBhdGggZmlsbD0iI0VBNDMzNSIgZD0iTTI2Mi4wMiA1NC40OGw3LjU2IDUuMDRjLTIuNDQgMy42MS04LjMyIDkuODMtMTguNDggOS44My0xMi42IDAtMjIuMDEtOS43NC0yMi4wMS0yMi4xOCAwLTEzLjE5IDkuNDktMjIuMTggMjAuOTItMjIuMTggMTEuNTEgMCAxNy4xNCA5LjE2IDE4Ljk4IDE0LjExbDEuMDEgMi41Mi0yOS42NSAxMi4yOGMyLjI3IDQuNDUgNS44IDYuNzIgMTAuNzUgNi43MiA0Ljk2IDAgOC40LTIuNDQgMTAuOTItNi4xNHptLTIzLjI3LTcuOThsMTkuODItOC4yM2MtMS4wOS0yLjc3LTQuMzctNC43LTguMjMtNC43LTQuOTUgMC0xMS44NCA0LjM3LTExLjU5IDEyLjkzeiIvPjxwYXRoIGZpbGw9IiM0Mjg1RjQiIGQ9Ik0zNS4yOSA0MS40MVYzMkg2N2MuMzEgMS42NC40NyAzLjU4LjQ3IDUuNjggMCA3LjA2LTEuOTMgMTUuNzktOC4xNSAyMi4wMS02LjA1IDYuMy0xMy43OCA5LjY2LTI0LjAyIDkuNjZDMTYuMzIgNjkuMzUuMzYgNTMuODkuMzYgMzQuOTEuMzYgMTUuOTMgMTYuMzIuNDcgMzUuMy40N2MxMC41IDAgMTcuOTggNC4xMiAyMy42IDkuNDlsLTYuNjQgNi42NGMtNC4wMy0zLjc4LTkuNDktNi43Mi0xNi45Ny02LjcyLTEzLjg2IDAtMjQuNyAxMS4xNy0yNC43IDI1LjAzIDAgMTMuODYgMTAuODQgMjUuMDMgMjQuNyAyNS4wMyA4Ljk5IDAgMTQuMTEtMy42MSAxNy4zOS02Ljg5IDIuNjYtMi42NiA0LjQxLTYuNDYgNS4xLTExLjY1bC0yMi40OS4wMXoiLz48L3N2Zz4=">
+                </a>
 
-        <div class="sidebar-search"> 
-          <i class="icon-search"></i>
-          <input type="text" class="sidebar-searchInput" placeholder="Search" autocomplete="off">
+                <div class="sidebar-search"> 
+                    <i class="icon-search"></i>
+                    <input type="text" class="sidebar-searchInput" placeholder="Search" autocomplete="off">
+                </div>
+
+                <div class="sidebar-lang">
+                    <ul>
+                        <li class="lang-choice">Korean</li>
+                        <li class="lang-choice">Viet</li>
+                        <li class="lang-choice">Nederlands</li>
+                    </ul> 
+                </div>
+
+                <ul class="sidebar-listNav"> 
+                    <li class="selected"><a href="" >CHARACTER</a></li>
+                    <li><a href="">WORD</a></li>
+                    <li><a href="">SENTENCE</a></li>
+                </ul>
+
+                <div class="shadow"> </div>
+
+                <ul id="full-list"> 
+                    <li class="">
+                        <a href="#conso">Consonant</a>
+                        <ul>
+                            <li class=""><a href="">a</a></li>
+                            <li class=""><a href="">b</a></li>
+                            <li class=""><a href="">c</a></li>
+                            <li class=""><a href="">d</a></li>
+                            <li class=""><a href="">e</a></li>
+                            <li class=""><a href="">f</a></li>
+                            <li class=""><a href="">g</a></li>
+                            <li class=""><a href="">h</a></li>
+                            <li class=""><a href="">i</a></li>
+                            <li class=""><a href="">j</a></li>
+                        </ul>     
+                    <li class="">
+                        <a href="#vowel">Vowel</a>
+                        <ul>
+                            <li class=""><a href="">a</a></li>
+                            <li class=""><a href="">b</a></li>
+                            <li class=""><a href="">c</a></li>
+                            <li class=""><a href="">d</a></li>
+                            <li class=""><a href="">e</a></li>
+                            <li class=""><a href="">f</a></li>
+                            <li class=""><a href="">g</a></li>
+                            <li class=""><a href="">h</a></li>
+                            <li class=""><a href="">i</a></li>
+                            <li class=""><a href="">j</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </aside>
+
+            <section class="content" tabindex="-1">
+                <div class="content-menu">
+                    <ul class="loginBar">
+                        <li><a id="loginButton" onclick="loginPopup();">Login</a></li>
+                        <li><a href="">sign up</a></li>
+                    </ul>
+            </section>
         </div>
 
-        <div class="sidebar-lang">
-          <ul>
-            <li class="lang-choice">Korean</li>
-            <li class="lang-choice">Viet</li>
-            <li class="lang-choice">Nederlands</li>
-          </ul> 
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close" onclick="closeLogin();">&times;</span>
+                <h3 style="margin-top:0;">Login</h3>
+
+                <div class="loginPopup">
+                    <form>
+                        <span>
+                            <label>Email:</label>
+                            <input class="loginInput" type="email" name="email" id="email" placeholder="Email" required>
+                        </span>
+                        <br/><br/>
+                        <span>
+                            <label>Password:</label>
+                            <input class="loginInput" type="password" name="password" id="password" placeholder="Password" required>    
+                        </span>
+                        <br/><br/>
+                        <div >
+                            <input type="submit" value="Log In" id="loginButton">
+                        </div>
+                        
+                        <h6 style="margin:10px 0px 0px 0px;"><a href="#" id="recovery">Forgotten account?</a></h6>
+                    </form>
+                </div>
+            </div>
+
         </div>
-
-        <ul class="sidebar-listNav"> 
-          <li class="selected"><a href="" >CHARACTER</a></li>
-          <li><a href="">WORD</a></li>
-          <li><a href="">SENTENCE</a></li>
-        </ul>
-
-        <div class="shadow"> </div>
-
-        <ul id="full-list"> 
-          <li class="">
-            <a href="#conso">Consonant</a>
-            <ul>
-              <li class=""><a href="">a</a></li>
-              <li class=""><a href="">b</a></li>
-              <li class=""><a href="">c</a></li>
-              <li class=""><a href="">d</a></li>
-              <li class=""><a href="">e</a></li>
-              <li class=""><a href="">f</a></li>
-              <li class=""><a href="">g</a></li>
-              <li class=""><a href="">h</a></li>
-              <li class=""><a href="">i</a></li>
-              <li class=""><a href="">j</a></li>
-            </ul>     
-          <li class="">
-            <a href="#vowel">Vowel</a>
-            <ul>
-              <li class=""><a href="">a</a></li>
-              <li class=""><a href="">b</a></li>
-              <li class=""><a href="">c</a></li>
-              <li class=""><a href="">d</a></li>
-              <li class=""><a href="">e</a></li>
-              <li class=""><a href="">f</a></li>
-              <li class=""><a href="">g</a></li>
-              <li class=""><a href="">h</a></li>
-              <li class=""><a href="">i</a></li>
-              <li class=""><a href="">j</a></li>
-            </ul>
-          </li>
-        </ul>
-
-       </aside>
-
-       <section class="content" tabindex="-1">
-         <div class="content-menu">
-           <ul class="loginBar">
-             <li><a href="">login</a></li>
-             <li><a href="">sign up</a></li>
-           </ul>
-
-
-         </div> 
-         <div class="content-outer">
-           <div id="content" class="content-inner">
-             
-           </div>
-         </div>
-       </section>
-    </div> 
-  </body>
+    </body>
 </html>
