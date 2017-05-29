@@ -7,6 +7,7 @@
         <link href="css/style.css" rel="stylesheet">
         <script src="login.js" type="text/javascript"></script>
         <script src="index.js" type="text/javascript"></script>
+        <script src="showContent.js" type="text/javascript"></script>
     </head>
     <body>
         <div id="wrapper">
@@ -27,16 +28,16 @@
 
                 <div class="sidebar-lang">
                     <ul>
-                        <li class="lang-choice">Korean</li>
-                        <li class="lang-choice">Viet</li>
-                        <li class="lang-choice">Nederlands</li>
+                        <li onclick="langSelect('Korean');" class="lang-choice">Korean</li>
+                        <li onclick="langSelect('Viet');" class="lang-choice">Viet</li>
+                        <li onclick="langSelect('Nederlands');" class="lang-choice">Nederlands</li>
                     </ul> 
                 </div>
 
                 <ul class="sidebar-listNav"> 
-                    <li class="selected"><a href="" >CHARACTER</a></li>
-                    <li><a href="">WORD</a></li>
-                    <li><a href="">SENTENCE</a></li>
+                    <li id="char" onclick="selected('char');" class="selected">CHARACTER</li>
+                    <li id="word" onclick="selected('word');">WORD</li>
+                    <li id="sent" onclick="selected('sent');">SENTENCE</li>
                 </ul>
 
                 <div class="shadow"> </div>
@@ -115,7 +116,97 @@
 
                 <div class="content-outer">
                     <div id="content" class="content-inner">
-                        <h1> Words </h1>
+                        <div id='charKorean'>
+                            <h1>charKorean</h1>
+                        </div>
+                        <div id='wordKorean'>
+                            <h1>wordKorean</h1>
+                        </div>
+                        <div id='sentKorean'>
+                            <h1>sentKorean</h1>
+                        </div>
+                        <div id='charViet'>
+                            <h1>charViet</h1>
+                        </div>
+                        <div id='wordViet'>
+                            <h1>wordViet</h1>
+                        </div>
+                        <div id='sentViet'>
+                            <h1>sentViet</h1>
+                        </div>
+                        <div id='charNederlands'>
+                            <h1>Nederlandse letters/ Dutch characters</h1>
+                            <audio controls>
+                                <source src="nederlands/character/a.mp3" type="audio/mpeg">
+                                Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                            <p> the letter A/a in Dutch</p><br/>
+                            
+                            <audio controls>
+                                <source src="nederlands/character/e.mp3" type="audio/mpeg">
+                                Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                            <p> the letter E/e in Dutch</p><br/>
+                            
+                            <audio controls>
+                                <source src="nederlands/character/i.mp3" type="audio/mpeg">
+                                Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                            <p> the letter I/i in Dutch</p><br/>
+                            
+                            <audio controls>
+                                <source src="nederlands/character/o.mp3" type="audio/mpeg">
+                                Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                            <p> the letter O/o in Dutch</p><br/>
+                            
+                            <audio controls>
+                                <source src="nederlands/character/u.mp3" type="audio/mpeg">
+                                Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                            <p> the letter U/u in Dutch</p><br/>
+                            
+                        </div>
+                        <div id='wordNederlands'>
+                            <h1>Nederlandse Woorden/ Dutch words</h1>
+                            <audio controls>
+                                <source src="nederlands/word/aardbei.mp3" type="audio/mpeg">
+                                Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                             <p>Aardbei means Strawberry in Dutch</p><br/>
+                             
+                            <audio controls>
+                                <source src="nederlands/word/graf.mp3" type="audio/mpeg">
+                                Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                              <p>Graf means Grave in Dutch</p><br/>
+                              
+                            <audio controls>
+                                <source src="nederlands/word/kurk.mp3" type="audio/mpeg">
+                                Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                               <p>Kurk means Cork in Dutch</p><br/>
+                               
+                            <audio controls>
+                                <source src="nederlands/word/opa.mp3" type="audio/mpeg">
+                                Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                                <p>Opa means GrandFather in Dutch</p><br/>
+                                
+                            <audio controls>
+                                <source src="nederlands/word/uur.mp3" type="audio/mpeg">
+                                Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                                 <p>Uur means Hour in Dutch</p><br/>
+                        </div>
+                        <div id='sentNederlands'>
+                            <h1>Nederlandse zinnen/ Dutch sentences</h1>
+                            <video width="320" height="240" controls>
+                                <source src="nederlands/sentence/scentenses.mp4" type="video/mp4">
+                                <source src="nederlands/sentence/scentenses.webm" type="video/webm">
+                                Your browser does not support the <code>video</code> tag.
+                            </video>
+                        </div>
                     </div>
                 </div>
             </section>

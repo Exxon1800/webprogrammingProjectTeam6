@@ -3,7 +3,7 @@
 
 ::-webkit-scrollbar {
     width: 5px;
-      
+
 }
 ::-webkit-scrollbar-button:vertical:increment {
     background: #888;
@@ -274,6 +274,11 @@ button, html input[type=button], input[type=submit] {
     padding-bottom: 20px;
 }
 
+.content-inner{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 .loginBar {
     display: flex;
     justify-content: flex-end;
@@ -293,7 +298,7 @@ button, html input[type=button], input[type=submit] {
 .loginBar a:hover {
     color: #fc945d;
     transition: all .125s linear;
-     cursor: pointer;
+    cursor: pointer;
 }
 
 body.sidebar-opened .sidebar-toggle {
@@ -323,7 +328,7 @@ body.sidebar-closed .content {
     text-decoration: none;
     color: #000000;
     font-size: 17px;
-    
+
 }
 
 #loginButton a:hover {
@@ -362,7 +367,7 @@ body.sidebar-closed .content {
 
 .modal-content a{
     color:white;
-    
+
 }
 
 /* The Close Button */
@@ -381,3 +386,19 @@ body.sidebar-closed .content {
 }
 
 
+/*char word sentence menu*/
+
+#char:hover, #word:hover, #sent:hover{
+    cursor: pointer;
+}
+
+/*lang choice*/
+.lang-choice:hover{
+    cursor: pointer;
+    color: #888;
+}
+
+/*Start hidden except for the korean char*/
+#wordKorean, #sentKorean, #charViet, #wordViet, #sentViet, #charNederlands, #wordNederlands, #sentNederlands{
+    display: none;
+}
