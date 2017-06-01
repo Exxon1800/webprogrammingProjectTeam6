@@ -526,6 +526,13 @@ footer {
 }
 
 
+/* audio*/
+audio{
+    margin-left: 1cm;
+    width: 100px;
+    padding: 10px;
+}
+
 /*Viet*/
 #charViet conso,#wordViet conso{
     background-color: blue;
@@ -538,6 +545,7 @@ footer {
     margin-left: 1cm;
     color: white;
 }
+
 #charViet vow,#wordViet vow{
     background-color: red;
     border: none;
@@ -549,6 +557,7 @@ footer {
     margin-left: 1cm;
     color: white;
 }
+
 #charViet h1, #wordViet h1, #sentViet h1{
     background: -webkit-linear-gradient(red,yellow);
     -webkit-background-clip:text;
@@ -560,11 +569,7 @@ footer {
     margin-left: 7.5cm;
     position: relative;
 }
-#charViet audio, #wordViet audio, #sentViet audio{
-    margin-left: 1cm;
-    width: 100px;
-    padding: 10px;
-}
+
 #charViet li, #wordViet li{
     margin-left: 1cm;
     font-weight: bold;
