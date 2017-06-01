@@ -402,3 +402,16 @@ body.sidebar-closed .content {
 #wordKorean, #sentKorean, #charViet, #wordViet, #sentViet, #charNederlands, #wordNederlands, #sentNederlands{
     display: none;
 }
+
+/*background and height*/
+div[id$='Nederlands']{
+    padding: 10px;
+    background-image: url("../nederlands/nlBG.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+.wordImage{
+    height: 100px;
+}

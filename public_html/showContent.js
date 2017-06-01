@@ -49,3 +49,9 @@ function selected(cat) {
     //show only the one that was selected
     document.getElementById(fullSelection).style.display = "block";
 }
+
+
+function play(){
+    
+}
+    
