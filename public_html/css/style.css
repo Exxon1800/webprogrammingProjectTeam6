@@ -415,3 +415,59 @@ div[id$='Nederlands']{
 .wordImage{
     height: 100px;
 }
+
+/*Viet*/
+#charViet conso,#wordViet conso{
+    background-color: blue;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 1cm;
+    color: white;
+}
+#charViet vow,#wordViet vow{
+    background-color: red;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 1cm;
+    color: white;
+}
+#charViet h1, #wordViet h1, #sentViet h1{
+    background: -webkit-linear-gradient(red,yellow);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Trocchi', serif;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 48px;
+    margin-left: 7.5cm;
+    position: relative;
+}
+#charViet audio, #wordViet audio, #sentViet audio{
+    margin-left: 1cm;
+    width: 100px;
+    padding: 10px;
+}
+#charViet li, #wordViet li{
+    margin-left: 1cm;
+    font-weight: bold;
+}
+#sentViet li{
+    margin-left: 1cm;
+    font-style: italic;
+
+}
+sent{
+    /*font-style: italic;*/
+    font-size: 17px;
+    margin-left: 1cm;
+    font-weight: bold;
+}
+/*end_Viet*/
