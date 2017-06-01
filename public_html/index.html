@@ -1,436 +1,696 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <title>Woodle</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
-        <script src="login.js" type="text/javascript"></script>
-        <script src="index.js" type="text/javascript"></script>
-        <script src="showContent.js" type="text/javascript"></script>
-        <script src="simpleAudioPlayer.js" type="text/javascript"></script>
-    </head>
+<head>
+    <title>Woodle</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="login.js" type="text/javascript"></script>
+    <script src="index.js" type="text/javascript"></script>
+    <script src="showContent.js" type="text/javascript"></script>
+</head>
 
-    <body>
-        <div id="wrapper">
+<body>
+    <div id="wrapper">
 
-            <button class="sidebar-toggle">
+        <button class="sidebar-toggle">
                 <i class="icon-menu"></i> 
             </button>
 
-            <aside class="sidebar">
-                <a href="#" class="sidebar-link">
-                    <canvas id="canvas" width="300" height="110"></canvas>
-                </a>
+        <aside class="sidebar">
+            <a href="#" class="sidebar-link">
+                <canvas id="canvas" width="300" height="110"></canvas>
+            </a>
 
-                <div class="sidebar-search">
-                    <i class="icon-search"></i>
-                    <input type="text" class="sidebar-searchInput" placeholder="Search" autocomplete="off">
-                </div>
+            <div class="sidebar-search">
+                <i class="icon-search"></i>
+                <input type="text" class="sidebar-searchInput" placeholder="Search" autocomplete="off">
+            </div>
 
-                <div class="sidebar-lang">
-                    <ul>
-                        <li onclick="langSelect('Korean');" class="lang-choice">Korean</li>
-                        <li onclick="langSelect('Viet');" class="lang-choice">Viet</li>
-                        <li onclick="langSelect('Nederlands');" class="lang-choice">Nederlands</li>
+            <div class="sidebar-lang">
+                <ul>
+                    <li onclick="langSelect('Korean');" class="lang-choice">Korean</li>
+                    <li onclick="langSelect('Viet');" class="lang-choice">Viet</li>
+                    <li onclick="langSelect('Nederlands');" class="lang-choice">Nederlands</li>
+                </ul>
+            </div>
+
+            <ul class="sidebar-listNav">
+                <li id="char" onclick="selected('char');" class="selected">CHARACTER</li>
+                <li id="word" onclick="selected('word');">WORD</li>
+                <li id="sent" onclick="selected('sent');">SENTENCE</li>
+            </ul>
+
+            <ul id="full-list">
+                <a href="#">Consonant</a>
+                <div class="consonant">
+                    <ul class="koreanChar list-opened">
+                        <li class=""><a href="#ㄱ">ㄱ</a></li>
+                        <li class=""><a href="#ㄴ">ㄴ</a></li>
+                        <li class=""><a href="#ㄷ">ㄷ</a></li>
+                        <li class=""><a href="#ㄹ">ㄹ</a></li>
+                        <li class=""><a href="#ㅁ">ㅁ</a></li>
+                    </ul>
+                    <ul class="vietChar">
+                        <li class=""><a href="#c">c</a></li>
+                        <li class=""><a href="#đ">đ</a></li>
+                        <li class=""><a href="#d">d</a></li>
+                        <li class=""><a href="#k">k</a></li>
+                    </ul>
+                    <ul class="nederChar">
+                        <li class=""><a href="#g">g</a></li>
+                        <li class=""><a href="#k">k</a></li>
+                        <li class=""><a href="#d">d</a></li>
+                        <li class=""><a href="#l">l</a></li>
+                        <li class=""><a href="#m">m</a></li>
                     </ul>
                 </div>
 
-                <ul class="sidebar-listNav">
-                    <li id="char" onclick="selected('char');" class="selected">CHARACTER</li>
-                    <li id="word" onclick="selected('word');">WORD</li>
-                    <li id="sent" onclick="selected('sent');">SENTENCE</li>
-                </ul>
+                <div class="space"> </div>
 
-                <div class="shadow"> </div>
-
-                <ul id="full-list">
-                    <li class="">
-                        <a href="#">Consonant</a>
-                        <ul>
-                            <li class=""><a href="#ㄱ">ㄱ</a></li>
-                            <li class=""><a href="#ㄴ">ㄴ</a></li>
-                            <li class=""><a href="#ㄷ">ㄷ</a></li>
-                            <li class=""><a href="#ㄹ">ㄹ</a></li>
-                            <li class=""><a href="#ㅁ">ㅁ</a></li>
-                        </ul>
-                    <li class="">
-                        <a href="#">Vowel</a>
-                        <ul>
-                            <li class=""><a href="#ㅏ">ㅏ</a></li>
-                            <li class=""><a href="#ㅓ">ㅓ</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="">
-                        <a onclick=" langSelect('Nederlands'), selected('char');" href="#const">Consonant</a>
-                        <ul>
-                            <li class=""><a onclick=" langSelect('Nederlands'), selected('char');" href="#g">g</a></li>
-                            <li class=""><a onclick=" langSelect('Nederlands'), selected('char');" href="#k">k</a></li>
-                            <li class=""><a onclick=" langSelect('Nederlands'), selected('char');" href="#d">d</a></li>
-                            <li class=""><a onclick=" langSelect('Nederlands'), selected('char');" href="#l">l</a></li>
-                            <li class=""><a onclick=" langSelect('Nederlands'), selected('char');" href="#m">m</a></li>
-                        </ul>
-                    <li class="">
-                        <a onclick=" langSelect('Nederlands'), selected('char');" href="#vowel">Vowel</a>
-                        <ul>
-                            <li class=""><a onclick=" langSelect('Nederlands'), selected('char');" href="#a">a</a></li>
-                            <li class=""><a onclick=" langSelect('Nederlands'), selected('char');" href="#o">o</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="">
-                        <a href="#">Consonant</a>
-                        <ul>
-                            <li class=""><a href="#ㄱ">c</a></li>
-                            <li class=""><a href="#ㄴ">đ</a></li>
-                            <li class=""><a href="#ㄹ">d</a></li>
-                            <li class=""><a href="#ㅁ">k</a></li>
-                        </ul>
-                    <li class="">
-                        <a href="#">Vowel</a>
-                        <ul>
-                            <li class=""><a href="#ㅁ">ă</a></li>
-                            <li class=""><a href="#ㅏ">ê</a></li>
-                            <li class=""><a href="#ㅓ">i</a></li>
-                            <li class=""><a href="#ㄷ">ô</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </aside>
-
-            <section class="content" tabindex="-1">
-                <div class="content-menu">
-                    <ul class="loginBar">
-                        <li><a id="loginButton" onclick="loginPopup();">Login</a></li>
-                        <li><a href="">sign up</a></li>
+                <a href="#">Vowel</a>
+                <div class="vowel">
+                    <ul class="koreanChar list-opened">
+                        <li class=""><a href="#ㅏ">ㅏ</a></li>
+                        <li class=""><a href="#ㅓ">ㅓ</a></li>
                     </ul>
+                    <ul class="vietChar">
+                        <li class=""><a href="#ă">ă</a></li>
+                        <li class=""><a href="#ê">ê</a></li>
+                    </ul>
+                    <ul class="nederChar">
+                        <li class=""><a href="#a">a</a></li>
+                        <li class=""><a href="#o">o</a></li>
+                    </ul>
+                </div>
+            </ul>
 
-                    <!-- The Modal -->
+        </aside>
 
-                    <div id="myModal" class="modal">
-                        <!-- Modal content -->
-                        <div class="modal-content">
-                            <span class="close" onclick="closeLogin();">&times;</span>
-                            <h3 style="margin-top:0;">Login</h3>
+        <section class="content" tabindex="-1">
+            <div class="content-menu">
 
-                            <div class="loginPopup">
-                                <form>
-                                    <span>
+                <ul class="loginBar">
+                    <li><a id="loginButton" onclick="loginPopup();">Login</a></li>
+                    <li><a href="">sign up</a></li>
+                </ul>
+
+                <!-- The Modal -->
+
+                <div id="myModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close" onclick="closeLogin();">&times;</span>
+                        <h3 style="margin-top:0;">Login</h3>
+
+                        <div class="loginPopup">
+                            <form>
+                                <span>
                                         <label>Email:</label>
                                         <input class="loginInput" type="email" name="email" id="email" placeholder="Email" required>
                                     </span>
-                                    <br/><br/>
-                                    <span>
+                                <br/><br/>
+                                <span>
                                         <label>Password:</label>
                                         <input class="loginInput" type="password" name="password" id="password" placeholder="Password" required>    
                                     </span>
-                                    <br/><br/>
-                                    <div>
-                                        <input type="submit" value="Log In" id="loginButton">
-                                    </div>
-                                </form>
+                                <br/><br/>
+                                <div>
+                                    <input type="submit" value="Log In" id="loginButton">
+                                </div>
+
+                                <h6 style="margin:10px 0px 0px 0px;"><a href="#" id="recovery">Forgotten account?</a></h6>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-outer">
+                <div id="content" class="content-inner">
+                    <div id='charKorean'>
+                        <h1 id="ks_consonant">Korean - Consonant</h1>
+                        <div class="Contents_Layout">
+                            <div class="Title_Layout">
+                                <h2 id="ㄱ">ㄱ(Giyok)</h2>
+                            </div>
+                            <div class="Audio_Layout">
+                                <audio controls>
+                                    <source src="korean/character/ㄱ(giyok).mp3" type="audio/mp3">
+                                    <source src="korean/character/ㄱ(giyok).wav" type="audio/wav"> Your browser does not support the <code>audio</code> tag.
+                                </audio>
+                            </div>
+                            <div class="Explain_Layout">
+                                <p>The first letter of Hangul. It is called the base station, and it is used as a beginning,
+                                    as in 'A', and as a longitudinal, as in 'station'. I blocked my crotch with my udder
+                                    and raised my tongue rope. It is silent when primordial, voiced between vowels, and pronounced
+                                    without removing tongue roots when it is vertical. The tongue is the letter made to imitate
+                                    the shape of the throat.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="Contents_Layout">
+                            <div class="Title_Layout">
+                                <h2 id="ㄴ">ㄴ(Nieun)</h2>
+                            </div>
+                            <div class="Audio_Layout">
+                                <audio controls>
+                                    <source src="korean/character/ㄴ(nieun).mp3" type="audio/mp3">
+                                    <source src="korean/character/ㄴ(nieun).wav" type="audio/wav"> Your browser does not support the <code>audio</code> tag.
+                                </audio>
+                            </div>
+                            <div class="Explain_Layout">
+                                <p>The second letter of the Korean alphabet. It is called 'nin', and it is used as a beginning,
+                                    as in 'I', and as a longitudinal, as in 'line'. It is a voicing that causes resonance
+                                    of the nasal cavity by putting the tip of the tongue on the alveoli and releasing it
+                                    to expose the nasal cavity to the nostrils. When it is a bell-tongue, pronounce it without
+                                    lifting the tip of the tongue. The tip of the tongue is the letter made to mimic the
+                                    shape attached to the alveoli.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="Contents_Layout">
+                            <div class="Title_Layout">
+                                <h2 id="ㄷ">ㄷ(Digeut)</h2>
+                            </div>
+                            <div class="Audio_Layout">
+                                <audio controls>
+                                    <source src="korean/character/ㄷ(digeut).mp3" type="audio/mp3">
+                                    <source src="korean/character/ㄷ(digeut).wav" type="audio/wav"> Your browser does not support the <code>audio</code> tag.
+                                </audio>
+                            </div>
+                            <div class="Explain_Layout">
+                                <p>The third letter of the Korean alphabet. It is called 'Diet', and it is used as a beginning
+                                    as in 'Dahn', as in '귿'. It is a plosive sound when it blocks the crotch with the umbilical
+                                    cord and puts the tip of the tongue on the alveolar bone to stop the mouth and pops it.
+                                    When it is a bell, it is pronounced without breaking it at the end. The shape of the
+                                    tongue that makes this sound is like 'ㄴ', but it is a letter made by adding one stroke
+                                    because it is pronounced hard.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="Contents_Layout">
+                            <div class="Title_Layout">
+                                <h2 id="ㄹ">ㄹ(Rieul)</h2>
+                            </div>
+                            <div class="Audio_Layout">
+                                <audio controls>
+                                    <source src="korean/character/ㄹ(rieul).mp3" type="audio/mp3">
+                                    <source src="korean/character/ㄹ(rieul).wav" type="audio/wav"> Your browser does not support the <code>audio</code> tag.
+                                </audio>
+                            </div>
+                            <div class="Explain_Layout">
+                                <p>The fourth letter of Hangul. It is called 'Lee', and it is used as a beginning as in 'La',
+                                    and as a longitudinal in 'Ten'. Among the vowels, the tip of the tongue is a sound that
+                                    vibrates while tapping the tongue once, and when it is a bongchung, it attaches the tip
+                                    of the tongue to the alveoli and sends air to both sides of the tongue.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="Contents_Layout">
+                            <div class="Title_Layout">
+                                <h2 id="ㅁ">ㅁ(Mieum)</h2>
+                            </div>
+                            <div class="Audio_Layout">
+                                <audio controls>
+                                    <source src="korean/character/ㅁ(mieum).mp3" type="audio/mp3">
+                                    <source src="korean/character/ㅁ(mieum).wav" type="audio/wav"> Your browser does not support the <code>audio</code> tag.
+                                </audio>
+                            </div>
+                            <div class="Explain_Layout">
+                                <p>The fifth letter of Korean alphabet. It is called 'Miseum', and it is used as a beginning,
+                                    as in 'Ma', as in 'Night'. It is a meteoric rhythm that keeps your mouth shut and exhales
+                                    into your nose and hears your voice. When it is a bell, I pronounce it without lifting
+                                    my lips. It is a letter made by mimicking the shape of two lips facing each other when
+                                    making sound.
+                                </p>
+                            </div>
+                        </div>
+
+                        <h1 id="ks_vowel">Korean - Vowel</h1>
+                        <div class="Contents_Layout">
+                            <div class="Title_Layout">
+                                <h2 id="ㅏ">ㅏ(Ah)</h2>
+                            </div>
+                            <div class="Audio_Layout">
+                                <audio controls>
+                                    <source src="korean/character/ㅏ(ah).mp3" type="audio/mp3">
+                                    <source src="korean/character/ㅏ(ah).wav" type="audio/wav"> Your browser does not support the <code>audio</code> tag.
+                                </audio>
+                            </div>
+                            <div class="Explain_Layout">
+                                <p>The fifteenth letter of the Korean alphabet. It used similar with 'Oh,' and 'ga, ga'.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="Contents_Layout">
+                            <div class="Title_Layout">
+                                <h2 id="ㅓ">ㅓ(Uh)</h2>
+                            </div>
+                            <div class="Audio_Layout">
+                                <audio controls>
+                                    <source src="korean/character/ㅓ(uh).mp3" type="audio/mp3">
+                                    <source src="korean/character/ㅓ(uh).wav" type="audio/wav"> Your browser does not support the <code>audio</code> tag.
+                                </audio>
+                            </div>
+                            <div class="Explain_Layout">
+                                <p>The seventeenth letter of the Korean alphabet. It is called 'uh', and it is used as neutral
+                                    as in 'ke, ke'.
+                                </p>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="content-outer">
-                    <div id="content" class="content-inner">
-                        <div id='charKorean'>
-                            <h1>charKorean</h1>
-
+                    <div id='wordKorean'>
+                        <h1>Korean - Word</h1>
+                        <div class="Contents_Layout">
+                            <div class="Title_Layout">
+                                <h2 id="계획">계획(Gyehoek)</h2>
+                            </div>
+                            <div class="Audio_Layout">
+                                <audio controls>
+                                    <source src="korean/word/계획.mp3" type="audio/mp3">
+                                    <source src="korean/character/계획.wav" type="audio/wav"> Your browser does not support the <code>audio</code> tag.
+                                </audio>
+                            </div>
+                            <div class="Image_Layout">
+                                <img src="korean/word/계획.jpg" type="image/jpg" width=150 height=150>
+                            </div>
+                            <div class="Mean_Layout">
+                                <p> n. plan </p>
+                            </div>
                         </div>
-                        <div id='wordKorean'>
-                            <h1>wordKorean</h1>
+                        <div class="Contents_Layout">
+                            <div class="Title_Layout">
+                                <h2 id="사람">사람(Saram)</h2>
+                            </div>
+                            <div class="Audio_Layout">
+                                <audio controls>
+                                    <source src="korean/word/사람.mp3" type="audio/mp3">
+                                    <source src="korean/word/사람.wav" type="audio/wav"> Your browser does not support the <code>audio</code> tag.
+                                </audio>
+                            </div>
+                            <div class="Image_Layout">
+                                <img src="korean/word/사람.jpg" type="image/jpg" width=150 height=150>
+                            </div>
+                            <div class="Mean_Layout">
+                                <p> n. person </p>
+                            </div>
                         </div>
-                        <div id='sentKorean'>
-                            <h1>sentKorean</h1>
+                        <div class="Contents_Layout">
+                            <div class="Title_Layout">
+                                <h2 id="일요일">일요일(Iryoli)</h2>
+                            </div>
+                            <div class="Audio_Layout">
+                                <audio controls>
+                                    <source src="korean/word/일요일.mp3" type="audio/mp3">
+                                    <source src="korean/word/일요일.wav" type="audio/wav"> Your browser does not support the <code>audio</code> tag.
+                                </audio>
+                            </div>
+                            <div class="Image_Layout">
+                                <img src="korean/word/일요일.jpg" type="image/jpg" width=150 height=150>
+                            </div>
+                            <div class="Mean_Layout">
+                                <p> n. Sunday </p>
+                            </div>
                         </div>
-                        <div id='charViet'>
-                            <h1>Chữ cái / Vietnamese characters</h1>
-                            <conso>Phụ âm / Consonants</conso>
-                            <br><br>
-                            <li>
-                                "c" or "C" pronounces as [k]/[cờ]
-                                <br>
+                        <div class="Contents_Layout">
+                            <div class="Title_Layout">
+                                <h2 id="과일">과일(Gwail)</h2>
+                            </div>
+                            <div class="Audio_Layout">
                                 <audio controls>
-                                    <source src="vietnamese/character/c.mp3" type="audio/mpeg">
-                                    Your browser does not support the <code>audio</code> tag.
+                                    <source src="korean/word/과일.mp3" type="audio/mp3">
+                                    <source src="korean/word/과일.wav" type="audio/wav"> Your browser does not support the <code>audio</code> tag.
                                 </audio>
-                            </li>
-                            <li>
-                                "d" or "D" pronounces as [z]/[dờ]
-                                <br>
-                                <audio controls>
-                                    <source src="vietnamese/character/d.mp3" type="audio/mpeg">
-                                    Your browser does not support the <code>audio</code> tag.
-                                </audio>
-                            </li>
-                            <li>
-                                "đ" or "Đ" pronounces as [ɗ]/[đờ]
-                                <br>
-                                <audio controls>
-                                    <source src="vietnamese/character/dd.mp3" type="audio/mpeg">
-                                    Your browser does not support the <code>audio</code> tag.
-                                </audio>
-                            </li>
-                            <li>
-                                "k" or "K" pronounces as [k]/[ka]
-                                <br>
-                                <audio controls>
-                                    <source src="vietnamese/character/k.mp3" type="audio/mpeg">
-                                    Your browser does not support the <code>audio</code> tag.
-                                </audio>
-                            </li>
-
-                            <vow>Nguyên âm / Vowels</vow>
-                            <br><br>
-                            <li>
-                                "ă" or "Ă" pronounces as [α]/[á]
-                                <br>
-                                <audio controls>
-                                    <source src="vietnamese/character/aa.mp3" type="audio/mpeg">
-                                    Your browser does not support the <code>audio</code> tag.
-                                </audio>
-                            </li>
-                            <li>
-                                "ê" or "Ê" pronounces as [ae]/[ê]
-                                <br>
-                                <audio controls>
-                                    <source src="vietnamese/character/ee.mp3" type="audio/mpeg">
-                                    Your browser does not support the <code>audio</code> tag.
-                                </audio>
-                            </li>
-                            <li>
-                                "i" or "I" pronounces as [i]
-                                <br>
-                                <audio controls>
-                                    <source src="vietnamese/character/i.mp3" type="audio/mpeg">
-                                    Your browser does not support the <code>audio</code> tag.
-                                </audio>
-                            </li>
-                            <li>
-                                "ô" or "Ô" pronounces as [oo]/[ô]
-                                <br>
-                                <audio controls>
-                                    <source src="vietnamese/character/oo.mp3" type="audio/mpeg">
-                                    Your browser does not support the <code>audio</code> tag.
-                                </audio>
-                            </li>
+                            </div>
+                            <div class="Image_Layout">
+                                <img src="korean/word/과일.jpg" type="image/jpg" width=150 height=150>
+                            </div>
+                            <div class="Mean_Layout">
+                                <p> n. fruit </p>
+                            </div>
                         </div>
-                        <div id='wordViet'>
-                            <h1>Từ vựng / Vietnamese words</h1>
-                            <conso>Từ đơn / Single words</conso>
-                            <br><br>
-                            <li>
-                                "uống" : drink / 마시다
-                                <br>
+                        <div class="Contents_Layout">
+                            <div class="Title_Layout">
+                                <h2 id="귀여운">귀여운(Gwiyeoun)</h2>
+                            </div>
+                            <div class="Audio_Layout">
                                 <audio controls>
-                                    <source src="vietnamese/word/drink.mp3" type="audio/mpeg">
-                                    Your browser does not support the <code>audio</code> tag.
+                                    <source src="korean/word/귀여운.mp3" type="audio/mp3">
+                                    <source src="korean/word/귀여운.wav" type="audio/wav"> Your browser does not support the <code>audio</code> tag.
                                 </audio>
-                            </li>
-                            <li>
-                                "ngủ" : sleep / 자다
-                                <br>
-                                <audio controls>
-                                    <source src="vietnamese/word/sleep.mp3" type="audio/mpeg">
-                                    Your browser does not support the <code>audio</code> tag.
-                                </audio>
-                            </li>
-                             <li>
-                                "nước" : water / 물
-                                <br>
-                                <audio controls>
-                                    <source src="vietnamese/word/water.mp3" type="audio/mpeg">
-                                    Your browser does not support the <code>audio</code> tag.
-                                </audio>
-                            </li>
-
-                            <vow>Từ ghép / Compound words</vow>
-                            <br><br>
-                             <li>
-                                "quốc gia" : country / 국가
-                                <br>
-                                <audio controls>
-                                    <source src="vietnamese/word/country.mp3" type="audio/mpeg">
-                                    Your browser does not support the <code>audio</code> tag.
-                                </audio>
-                            </li>
-                            <li>
-                                "điện thoại" : phone / 전화
-                                <br>
-                                <audio controls>
-                                    <source src="vietnamese/word/phone.mp3" type="audio/mpeg">
-                                    Your browser does not support the <code>audio</code> tag.
-                                </audio>
-                            </li>
-                            <li>
-                                "lộng lẫy" : gorgeous / 화려하다
-                                <br>
-                                <audio controls>
-                                    <source src="vietnamese/word/gorgeous.mp3" type="audio/mpeg">
-                                    Your browser does not support the <code>audio</code> tag.
-                                </audio>
-                            </li>
-                        </div>
-                        <div id='sentViet'>
-                            <h1>Câu / Vietnamese sentences</h1>
-                            <li>
-                                Xin chào!
-                                <br><br>
-                                <sent>English: Hello!</sent>
-                                <br>
-                                <sent>한국어: 안녕하세요!</sent>
-                                <br>
-                                <audio controls>
-                                    <source src="vietnamese/sentence/hello.mp3" type="audio/mpeg">
-                                    Your browser does not support the <code>audio</code> tag.
-                                </audio>
-                            </li>
-                            <li>
-                                Bạn có khỏe không?
-                                <br><br>
-                                <sent>English: How are you?</sent>
-                                <br>
-                                <sent>한국어: 잘 지내요?</sent>
-                                <br>
-                                <audio controls>
-                                    <source src="vietnamese/sentence/howareyou.mp3" type="audio/mpeg">
-                                    Your browser does not support the <code>audio</code> tag.
-                                </audio>
-                            </li>
-                            <li>
-                                Ngày mai tôi sẽ đến trường lúc 7 giờ sáng.
-                                <br><br>
-                                <sent>English: I will go to school at 7AM tomorrow.</sent>
-                                <br>
-                                <sent>한국어: 내일 아침 7시에 학교에 갈거야.</sent>
-                                <br>
-                                <audio controls>
-                                    <source src="vietnamese/sentence/school.mp3" type="audio/mpeg">
-                                    Your browser does not support the <code>audio</code> tag.
-                                </audio>
-                            </li>
-                            <video width="800" height="400" controls>
-                                <source src="vietnamese/sentence/vn.mp4" type="video/mp4">
-                            </video>
+                            </div>
+                            <div class="Image_Layout">
+                                <img src="korean/word/귀여운.jpg" type="image/jpg" width=150 height=150>
+                            </div>
+                            <div class="Mean_Layout">
+                                <p> a. cute </p>
+                            </div>
                         </div>
 
-                        <div class="speaker"></div>
-
-                        <audio id="player">
-                            <source src="nederlands/character/a.mp3" type="audio/mp3" />
-                        </audio>
-
-
-                        <div id='charNederlands'>
-                            <h1>Nederlandse letters/ Dutch characters</h1>
-                            <h3 id="const"> Dutch consonants</h3>
+                    </div>
+                    <div id='sentKorean'>
+                        <h1>Korean - Sentence</h1>
+                        <div class="sent_Layout">
+                            <p>I'm American.</p>
+                            <p>제가 미국인입니다.</p>
+                            <p>Che-ga meegookin imneeda.</p>
                             <audio controls>
-                                <source src="nederlands/character/g.mp3" type="audio/mpeg">
-                                Your browser does not support the <code>audio</code> tag.
+                                <source src="korean/sentence/제가 미국인입니다 ..mp3" type="audio/mp3">
                             </audio>
-                            <p id="g">The letter G in Dutch, the G in Dutch has a distinct harsh sound <br/></p><br/>
-                            
-                            <audio controls>
-                                <source src="nederlands/character/o.mp3" type="audio/mpeg">
-                                Your browser does not support the <code>audio</code> tag.
-                            </audio>
-                            <p> the letter O in Dutch</p><br/>
-
-                            <audio controls>
-                                <source src="nederlands/character/k.mp3" type="audio/mpeg">
-                                Your browser does not support the <code>audio</code> tag.
-                            </audio>
-                            <p  id="k"> the letter K in Dutch</p><br/>
-
-                            <audio controls>
-                                <source src="nederlands/character/d.mp3" type="audio/mpeg">
-                                Your browser does not support the <code>audio</code> tag.
-                            </audio>
-                            <p  id="d"> the letter D in Dutch</p><br/>
-
-                            <audio controls>
-                                <source src="nederlands/character/l.mp3" type="audio/mpeg">
-                                Your browser does not support the <code>audio</code> tag.
-                            </audio>
-                            <p> the letter L in Dutch</p><br/>
-
-                            <audio controls >
-                                <source src="nederlands/character/m.mp3" type="audio/mpeg">
-                                Your browser does not support the <code>audio</code> tag.
-                            </audio>
-                            <p id="m"> the letter M in Dutch</p><br/>
-                            
-                            <h3 id="vowel"> Dutch vowels</h3>
-                            <audio controls >
-                                <source src="nederlands/character/a.mp3" type="audio/mpeg">
-                                Your browser does not support the <code>audio</code> tag.
-                            </audio>
-                            <p id="a"> the letter A in Dutch</p><br/>
-
-                            <audio controls >
-                                <source src="nederlands/character/o.mp3" type="audio/mpeg">
-                                Your browser does not support the <code>audio</code> tag.
-                            </audio>
-                            <p id="o"> the letter O in Dutch</p><br/>
-                                
                         </div>
-                        <div id='wordNederlands'>
-                            
-                            <h1>Nederlandse Woorden/ Dutch words</h1>
-                            <img class="wordImage" src="nederlands/word/images/aardbei.png" alt=""/>
+                        <div class="sent_Layout">
+                            <p>I'm studying Korean.</p>
+                            <p>한국말을 공부합니다.</p>
+                            <p>kongbu-hamneeda. or: Hangoong-mal-ul kongbu-hamneeda.</p>
                             <audio controls>
-                                <source src="nederlands/word/aardbei.mp3" type="audio/mpeg">
-                                Your browser does not support the <code>audio</code> tag.
+                                <source src="korean/sentence/한국말을 공부합니다..mp3" type="audio/mp3">
                             </audio>
-                            <p>Aardbei means Strawberry in Dutch</p><br/>
-                            
-                            <img class="wordImage" src="nederlands/word/images/graf.png" alt=""/>
-                            <audio controls>
-                                <source src="nederlands/word/graf.mp3" type="audio/mpeg">
-                                Your browser does not support the <code>audio</code> tag.
-                            </audio>
-                            <p>Graf means Grave in Dutch, you can hear the distinct harsh sound that the Dutch G has.</p><br/>
-                            
-                            <img class="wordImage" src="nederlands/word/images/kurk.png" alt=""/>
-                            <audio controls>
-                                <source src="nederlands/word/kurk.mp3" type="audio/mpeg">
-                                Your browser does not support the <code>audio</code> tag.
-                            </audio>
-                            <p>Kurk means Cork in Dutch</p><br/>
-                            
-                            <img class="wordImage" src="nederlands/word/images/opa.png" alt=""/>
-                            <audio controls>
-                                <source src="nederlands/word/opa.mp3" type="audio/mpeg">
-                                Your browser does not support the <code>audio</code> tag.
-                            </audio>
-                            <p>Opa means GrandFather in Dutch</p><br/>
-                            
-                            <img class="wordImage" src="nederlands/word/images/uur.png" alt=""/>
-                            <audio controls>
-                                <source src="nederlands/word/uur.mp3" type="audio/mpeg">
-                                Your browser does not support the <code>audio</code> tag.
-                            </audio>
-                            <p>Uur means Hour in Dutch</p><br/>
                         </div>
-                        <div id='sentNederlands'>
-                            <h1>Nederlandse zinnen/ Dutch sentences</h1>
-                            <video width="600" controls>
-                                <source src="nederlands/sentence/scentenses.mp4" type="video/mp4">
-                                <source src="nederlands/sentence/scentenses.webm" type="video/webm">
-                                Your browser does not support the <code>video</code> tag.
-                            </video>
-                            
-                            <p> This video explains the basics of the Dutch sentence structure by comparing it to the English sentence structure</p>
+                        <div class="sent_Layout">
+                            <p> My name is Charles.</p>
+                            <p> 제 이름은 Charles입니다.</p>
+                            <p> Cheeerum-un Charles imneeda.</p>
+                            <audio controls>
+                                <source src="korean/sentence/한국말을 공부합니다..mp3" type="audio/mp3">
+                            </audio>
+                        </div>
+                        <div class="sent_Layout">
+                            <p> I like exercising. </p>
+                            <p> 운동을 좋아해요.</p>
+                            <p> Oondong-ul cho-ah-haeyo.</p>
+                            <audio controls>
+                                <source src="korean/sentence/한국말을 공부합니다..mp3" type="audio/mp3">
+                            </audio>
+                        </div>
+                        <div class="sent_Layout">
+                            <p> He speaks English well. </p>
+                            <p> 저분은 영어를 잘 합니다.</p>
+                            <p> Cho-boon-un yongo-rul chal hamneeda.</p>
+                            <audio controls>
+                                <source src="korean/sentence/한국말을 공부합니다..mp3" type="audio/mp3">
+                            </audio>
+                        </div>
+                        <div class="sent_Layout">
+                            <p> I live in Seoul. </p>
+                            <p> 저는 서울에서 살고 있습니다.</p>
+                            <p> Cho-nun soh-ul-eh-soh salgo issumneeda.</p>
+                            <audio controls>
+                                <source src="korean/sentence/한국말을 공부합니다..mp3" type="audio/mp3">
+                            </audio>
+                        </div>
+                        <div class="sent_Layout">
+                            <p> Where do you work?</p>
+                            <p> 어디에서 일하십니까?</p>
+                            <p> Oh-dee-eh-soh il-ha-shimni-gha?</p>
+                            <audio controls>
+                                <source src="korean/sentence/한국말을 공부합니다..mp3" type="audio/mp3">
+                            </audio>
+                        </div>
+                        <div class="sent_Layout">
+                            <p> We're eating now.</p>
+                            <p> 지금 식사하는 중입니다.</p>
+                            <p> Chi-gum shiksa-hanun joong-imneeda.</p>
+                            <audio controls>
+                                <source src="korean/sentence/한국말을 공부합니다..mp3" type="audio/mp3">
+                            </audio>
+                        </div>
+                        <div class="sent_Layout">
+                            <p> This is delicious.</p>
+                            <p> 맛있어요.</p>
+                            <p> Mashee-eessoyo.</p>
+                            <audio controls>
+                                <source src="korean/sentence/한국말을 공부합니다..mp3" type="audio/mp3">
+                            </audio>
+                        </div>
+                        <div class="sent_Layout">
+                            <p> It looks like rain.</p>
+                            <p> 비가 올 것 같아요.</p>
+                            <p> Piga ol goht katahyo.</p>
+                            <audio controls>
+                                <source src="korean/sentence/한국말을 공부합니다..mp3" type="audio/mp3">
+                            </audio>
+                        </div>
+                        <div class="sent_Layout">
+                            <p> I can read Korean.</p>
+                            <p> 한글을 읽을 수 있어요.</p>
+                            <p> Hangul-ul ilgul soo issoyo.</p>
+                            <audio controls>
+                                <source src="korean/sentence/한국말을 공부합니다..mp3" type="audio/mp3">
+                            </audio>
                         </div>
                     </div>
+                    <div id='charViet'>
+                        <h1>Chữ cái / Vietnamese characters</h1>
+                        <conso>Phụ âm / Consonants</conso>
+                        <br><br>
+                        <li id="c">
+                            "c" or "C" pronounces as [k]/[cờ]
+                            <br>
+                            <audio controls>
+                                <source src="vietnamese/character/c.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                        </li>
+                        <li id="đ">
+                            "d" or "D" pronounces as [z]/[dờ]
+                            <br>
+                            <audio controls>
+                                <source src="vietnamese/character/d.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                        </li>
+                        <li id="d">
+                            "đ" or "Đ" pronounces as [ɗ]/[đờ]
+                            <br>
+                            <audio controls>
+                                <source src="vietnamese/character/dd.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                        </li>
+                        <li id="k">
+                            "k" or "K" pronounces as [k]/[ka]
+                            <br>
+                            <audio controls>
+                                <source src="vietnamese/character/k.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                        </li>
+
+                        <vow>Nguyên âm / Vowels</vow>
+                        <br><br>
+                        <li>
+                            "ă" or "Ă" pronounces as [α]/[á]
+                            <br>
+                            <audio controls>
+                                <source src="vietnamese/character/aa.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                        </li>
+                        <li>
+                            "ê" or "Ê" pronounces as [ae]/[ê]
+                            <br>
+                            <audio controls>
+                                <source src="vietnamese/character/ee.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                        </li>
+                        <li>
+                            "i" or "I" pronounces as [i]
+                            <br>
+                            <audio controls>
+                                <source src="vietnamese/character/i.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                        </li>
+                        <li>
+                            "ô" or "Ô" pronounces as [oo]/[ô]
+                            <br>
+                            <audio controls>
+                                <source src="vietnamese/character/oo.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                        </li>
+                    </div>
+                    <div id='wordViet'>
+                        <h1>Từ vựng / Vietnamese words</h1>
+                        <conso>Từ đơn / Single words</conso>
+                        <br><br>
+                        <li>
+                            "uống" : drink / 마시다
+                            <br>
+                            <audio controls>
+                                <source src="vietnamese/word/drink.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                        </li>
+                        <li>
+                            "ngủ" : sleep / 자다
+                            <br>
+                            <audio controls>
+                                <source src="vietnamese/word/sleep.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                        </li>
+                        <li>
+                            "nước" : water / 물
+                            <br>
+                            <audio controls>
+                                <source src="vietnamese/word/water.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                        </li>
+
+                        <vow>Từ ghép / Compound words</vow>
+                        <br><br>
+                        <li>
+                            "quốc gia" : country / 국가
+                            <br>
+                            <audio controls>
+                                <source src="vietnamese/word/country.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                        </li>
+                        <li>
+                            "điện thoại" : phone / 전화
+                            <br>
+                            <audio controls>
+                                <source src="vietnamese/word/phone.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                        </li>
+                        <li>
+                            "lộng lẫy" : gorgeous / 화려하다
+                            <br>
+                            <audio controls>
+                                <source src="vietnamese/word/gorgeous.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                        </li>
+                    </div>
+                    <div id='sentViet'>
+                        <h1>Câu / Vietnamese sentences</h1>
+                        <li>
+                            Xin chào!
+                            <br><br>
+                            <sent>English: Hello!</sent>
+                            <br>
+                            <sent>한국어: 안녕하세요!</sent>
+                            <br>
+                            <audio controls>
+                                <source src="vietnamese/sentence/hello.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                        </li>
+                        <li>
+                            Bạn có khỏe không?
+                            <br><br>
+                            <sent>English: How are you?</sent>
+                            <br>
+                            <sent>한국어: 잘 지내요?</sent>
+                            <br>
+                            <audio controls>
+                                <source src="vietnamese/sentence/howareyou.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                        </li>
+                        <li>
+                            Ngày mai tôi sẽ đến trường lúc 7 giờ sáng.
+                            <br><br>
+                            <sent>English: I will go to school at 7AM tomorrow.</sent>
+                            <br>
+                            <sent>한국어: 내일 아침 7시에 학교에 갈거야.</sent>
+                            <br>
+                            <audio controls>
+                                <source src="vietnamese/sentence/school.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                            </audio>
+                        </li>
+                        <video width="800" height="400" controls>
+                            <source src="vietnamese/sentence/vn.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div id='charNederlands'>
+                        <h1>Nederlandse letters/ Dutch characters</h1>
+                        <audio controls>
+                            <source src="nederlands/character/a.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                        </audio>
+                        <p> the letter A/a in Dutch</p><br/>
+
+                        <audio controls>
+                            <source src="nederlands/character/e.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                        </audio>
+                        <p> the letter E/e in Dutch</p><br/>
+
+                        <audio controls>
+                            <source src="nederlands/character/i.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                        </audio>
+                        <p> the letter I/i in Dutch</p><br/>
+
+                        <audio controls>
+                            <source src="nederlands/character/o.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                        </audio>
+                        <p> the letter O/o in Dutch</p><br/>
+
+                        <audio controls>
+                            <source src="nederlands/character/u.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                        </audio>
+                        <p> the letter U/u in Dutch</p><br/>
+                    </div>
+                    <div id='charNederlands'>
+                        <h1>Nederlandse letters/ Dutch characters</h1>
+                        <audio controls id="g">
+                            <source src="nederlands/character/a.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                        </audio>
+                        <p> the letter A/a in Dutch</p><br/>
+
+                        <audio controls id="k">
+                            <source src="nederlands/character/e.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                        </audio>
+                        <p> the letter E/e in Dutch</p><br/>
+
+                        <audio controls id="d">
+                            <source src="nederlands/character/i.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                        </audio>
+                        <p> the letter I/i in Dutch</p><br/>
+
+                        <audio controls id="l">
+                            <source src="nederlands/character/o.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                        </audio>
+                        <p> the letter O/o in Dutch</p><br/>
+
+                        <audio controls id="m">
+                            <source src="nederlands/character/u.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                        </audio>
+                        <p> the letter U/u in Dutch</p><br/>
+
+                    </div>
+                    <div id='wordNederlands'>
+                        <h1>Nederlandse Woorden/ Dutch words</h1>
+                        <audio controls>
+                            <source src="nederlands/word/aardbei.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                        </audio>
+                        <p>Aardbei means Strawberry in Dutch</p><br/>
+
+                        <audio controls>
+                            <source src="nederlands/word/graf.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                        </audio>
+                        <p>Graf means Grave in Dutch</p><br/>
+
+                        <audio controls>
+                            <source src="nederlands/word/kurk.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                        </audio>
+                        <p>Kurk means Cork in Dutch</p><br/>
+
+                        <audio controls>
+                            <source src="nederlands/word/opa.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                        </audio>
+                        <p>Opa means GrandFather in Dutch</p><br/>
+
+                        <audio controls>
+                            <source src="nederlands/word/uur.mp3" type="audio/mpeg"> Your browser does not support the <code>audio</code> tag.
+                        </audio>
+                        <p>Uur means Hour in Dutch</p><br/>
+                    </div>
+                    <div id='sentNederlands'>
+                        <h1>Nederlandse zinnen/ Dutch sentences</h1>
+                        <video width="320" height="240" controls>
+                            <source src="nederlands/sentence/scentenses.mp4" type="video/mp4">
+                            <source src="nederlands/sentence/scentenses.webm" type="video/webm"> Your browser does not support the <code>video</code> tag.
+                        </video>
+                    </div>
                 </div>
-            </section>
-        </div>
-    </body>
+
+            </div>
+            <footer> &copy; SeoulTech 2017 </footer>
+    </div>
+    </section>
+    </div>
+</body>
 
 </html>

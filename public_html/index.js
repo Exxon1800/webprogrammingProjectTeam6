@@ -110,4 +110,3 @@ function LogoCanvas() {
 }
 
 addEventListener("load", initate);
-

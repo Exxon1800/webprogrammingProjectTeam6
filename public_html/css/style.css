@@ -37,6 +37,14 @@ ul {
     padding: 0;
     margin: 0;
 }
+h1 {
+    font-size: 35px;
+}
+h2 {
+    margin: 0;
+    padding: 5px 0px;
+}
+
 .sidebar, body {
     font-family: 'Lato', sans-serif;
 }
@@ -110,6 +118,9 @@ button, html input[type=button], input[type=submit] {
     width: 100%;
     height: 100%;
     padding-left: 300px;
+    position: relative;
+    overflow-y: auto;
+    z-index: 3;
 }
 
 
@@ -132,8 +143,6 @@ button, html input[type=button], input[type=submit] {
 }
 
 
-
-
 .sidebar {
     background: #373f52;
     color: #d5dae6;
@@ -150,14 +159,13 @@ button, html input[type=button], input[type=submit] {
     body .sidebar {
         z-index: 3;
         transform: translateX(-102%);
-        will-change: transform
     }
 }
 
 
 @media screen and (max-width: 768px) {
     body.sidebar-opened .sidebar{
-        transform:translateX(0)
+        transform:translateX(0);
     }
 }
 
@@ -165,23 +173,23 @@ button, html input[type=button], input[type=submit] {
     .sidebar-toggle {
         transform:translateX(0);
         left: 5px;
-        top: 5px
+        top: 5px;
     }
 
     .sidebar-opened .sidebar-toggle {
         left: 18px;
-        top: 5px
+        top: 5px;
     }
 }
 
 
 @media screen and (max-height: 500px) {
     .sidebar {
-        overflow-y:auto
+        overflow-y:auto;
     }
 
     .sidebar #full-list {
-        overflow: visible
+        overflow: visible;
     }
 }
 .sidebar .sidebar-listNav li, .sidebar .sidebar-listNav li a {
@@ -323,6 +331,8 @@ body.sidebar-closed .content {
 }
 
 
+
+
 /*login*/
 #loginButton a{
     text-decoration: none;
@@ -415,6 +425,106 @@ div[id$='Nederlands']{
 .wordImage{
     height: 100px;
 }
+
+
+/* Contents */
+.content-inner {
+    max-width: 949px;
+    margin: 0 auto;
+    padding: 3px 60px;
+    display: flex;
+}
+
+.Contents_Layout {
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.Title_Layout {
+    padding: 0px;
+    margin: 0px;
+    width: 49%;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.Audio_Layout {
+    padding: 0px;
+    margin: 0px;
+    width: 49%;
+    text-align: center;
+}
+
+.Explain_Layout {
+    padding: 0px;
+    margin: 0px;
+    width: 99%;
+    border: 1px solid black;
+}
+
+.Title_Layout p {
+    font-style: bold;
+}
+
+.Image_Layout {
+    width: 49%;
+    margin: 0px;
+}
+
+.Mean_Layout {
+    width: 49%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.sent_Layout {
+    width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 2px dashed black;
+}
+
+.content-inner .Mean_Layout {
+    font-size: 30px;
+    font-style: bold;
+}
+
+.content-inner .Explain_Layout{
+    padding: 0 10px;
+}
+
+
+footer {
+    border-top: 1px solid black;
+    text-align: center;
+    padding: 20px;
+    margin: 20px 50px;
+
+}
+
+#full-list .list-opend {
+    display: block;
+}
+
+[class$="Char"] {
+    display: none;
+}
+
+.space {
+    padding-top: 10px;
+}
+
+.drag {
+    border: 1px solid black;
+    display: inline-block;
+    margin: 0px 10px;
+}
+
 
 /*Viet*/
 #charViet conso,#wordViet conso{
