@@ -19,15 +19,21 @@
             </button>
 
         <aside class="sidebar">
-            <a href="#" class="sidebar-link">
+            <a href="" class="sidebar-link">
                 <canvas id="canvas" width="300" height="110"></canvas>
             </a>
 
             <div class="sidebar-search">
-                <i class="icon-search"></i>
-                <input type="text" class="sidebar-searchInput" placeholder="Search" autocomplete="off">
+                <i class="icon-search" onclick='search()'></i>
+                <input type="text" class="sidebar-searchInput" id="sidebar-search" placeholder="Search" autocomplete="off">
             </div>
 
+            <div id="databox"> </div>
+            <div>
+                <form>
+                    <p class="clearButton" id="Clear" onClick='clearmemory()'> Clear </p>
+                </form>
+            </div>
             <div class="sidebar-lang">
                 <ul>
                     <li onclick="langSelect('Korean');" class="lang-choice">Korean</li>
@@ -90,48 +96,58 @@
 
         <section class="content" tabindex="-1">
             <div class="content-menu">
-
                 <ul class="loginBar">
                     <li><a id="loginButton" onclick="loginPopup();">Login</a></li>
-                    <li><a href="">sign up</a></li>
+                    <li><a id="signupButton" onclick="signupPopup();">Sign Up</a></li>
                 </ul>
 
                 <!-- The Modal -->
 
-                <div id="myModal" class="modal">
+                <div id="myModal1" class="modal">
                     <!-- Modal content -->
                     <div class="modal-content">
                         <span class="close" onclick="closeLogin();">&times;</span>
                         <h3 style="margin-top:0;">Login</h3>
-                    <!-- The Modal -->
-                    <div id="myModal" class="modal">
-                        <!-- Modal content -->
-                        <div class="modal-content">
-                            <span class="close" onclick="closeLogin();">&times;</span>
-                            <h3 style="margin-top:0;">Login</h3>
 
-                        <div class="loginPopup">
+                        <div id="loginPopup">
                             <form>
                                 <span>
                                         <label>Email:</label>
-                                        <input class="loginInput" type="email" name="email" id="email" placeholder="Email" required>
+                                        <input class="loginInput" type="email" name="email" id="logemail" placeholder="Email" required>
                                     </span>
                                 <br/><br/>
-                                <span>
-                                        <label>Password:</label>
-                                        <input class="loginInput" type="password" name="password" id="password" placeholder="Password" required>    
-                                    </span>
-                                <br/><br/>
-                                <div>
-                                    <input type="submit" value="Log In" id="loginButton">
-                                </div>
 
-                                <h6 style="margin:10px 0px 0px 0px;"><a href="#" id="recovery">Forgotten account?</a></h6>
+                                <div>
+                                    <input type="button" value="Log In" id="LoginButton">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="myModal2" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close" onclick="closeSignup();">&times;</span>
+                        <h3 style="margin-top:0;">Sign Up</h3>
+
+                        <div id="SignUpPopup">
+                            <form>
+                                <span>
+                                        <label>Email:</label>
+                                        <input class="loginInput" type="email" name="email" id="signemail" placeholder="Email" required>
+                                    </span>
+                                <br><br>
+
+                                <div>
+                                    <input type="button" value="Create Account" id="SignUpButton">
+                                </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
+
 
             <div class="content-outer">
                 <div id="content" class="content-inner">

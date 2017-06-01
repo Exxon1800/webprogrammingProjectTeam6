@@ -560,7 +560,7 @@ audio{
 
 #charViet h1, #wordViet h1, #sentViet h1{
     background: -webkit-linear-gradient(red,yellow);
-    -webkit-background-clip:text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: 'Trocchi', serif;
     font-size: 40px;
@@ -586,3 +586,16 @@ sent{
     font-weight: bold;
 }
 /*end_Viet*/
+
+#databox {
+	text-align: center;
+}
+
+.clearButton {
+	text-align: center;
+    border: 0.5px solid #262b37;
+    padding: 0;
+    margin: 0;
+}
+
+
