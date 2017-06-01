@@ -421,7 +421,13 @@ div[id$='Nederlands']{
     background-attachment: fixed;
     height: 100%;
 }
-
+div[id$='Viet']{
+    background-image: url("../vietnamese/pink.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 .wordImage{
     height: 100px;
 }
@@ -534,6 +540,14 @@ audio{
 }
 
 /*Viet*/
+#vletter img{
+    height: 0px;
+    width: 10px;
+}
+#charViet, #wordViet, #sentViet{
+    width: 1000px;
+    height: 1400px;
+}
 #charViet conso,#wordViet conso{
     background-color: blue;
     border: none;
@@ -557,19 +571,66 @@ audio{
     margin-left: 1cm;
     color: white;
 }
-
-#charViet h1, #wordViet h1, #sentViet h1{
-    background: -webkit-linear-gradient(red,yellow);
+#charViet h1 img{
+    width: 100px;
+    height: 50px;
+}
+#charViet h1{
+    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+    background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+    color:transparent;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    margin-left: 4.5cm;
+    padding: 10px;
     font-family: 'Trocchi', serif;
     font-size: 40px;
     font-weight: bold;
     line-height: 48px;
-    margin-left: 7.5cm;
-    position: relative;
 }
+#wordViet h1 img{
+    width: 100px;
+    height: 50px;
+}
+#wordViet h1{
+    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+    background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
 
+    margin-left: 5.5cm;
+    padding: 10px;
+    font-family: 'Trocchi', serif;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 48px;
+}
+#sentViet h1 img{
+    width: 100px;
+    height: 50px;
+}
+#sentViet h1{
+    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+    background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    margin-left: 5.5cm;
+    padding: 10px;
+    font-family: 'Trocchi', serif;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 48px;
+}
+#caption{
+    font-weight: bold;
+    color: black;
+    margin-left: 2cm;
+    font-size: 30px;
+}
 #charViet li, #wordViet li{
     margin-left: 1cm;
     font-weight: bold;
@@ -578,6 +639,43 @@ audio{
     margin-left: 1cm;
     font-style: italic;
 
+}
+#viet_box{
+    width: 700px;
+    background-color: white;
+    padding: 20px;
+    margin-left: 1cm;
+    border: solid 3px;
+    color: red;
+    border-radius: 15px;
+}
+#viet_box img{
+    height: 60px;
+    width: 150px;
+    padding: 10px;
+}
+#viet_box1{
+    width: 500px;
+    background-color: white;
+    padding: 20px;
+    margin-left: 1cm;
+    border: solid 3px;
+    color: red;
+    border-radius: 15px;
+}
+#viet_box1 img{
+    height: 100px;
+    width: 200px;
+    padding: 10px;
+}
+#viet_box2{
+    width: 800px;
+    background-color: white;
+    padding: 20px;
+    margin-left: 1cm;
+    border-radius: 15px;
+    border: solid 3px;
+    color: red;
 }
 sent{
     /*font-style: italic;*/
