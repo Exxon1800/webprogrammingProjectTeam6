@@ -138,7 +138,6 @@ button, html input[type=button], input[type=submit] {
     padding: 0;
     left: 18px;
     top: 8px;
-    will-change: transform;
     transform: translateX(250px);
 }
 
@@ -368,11 +367,11 @@ body.sidebar-closed .content {
 
 /* Modal Content */
 .modal-content {
-    background-color: #373f52;
+    background-color: #4b5772;
     color: white;
     margin: auto;
     padding: 20px;
-    width: 350px;
+    width: 300px;
 }
 
 .modal-content a{
@@ -432,13 +431,16 @@ div[id$='Viet']{
     height: 100px;
 }
 
-
 /* Contents */
-.content-inner {
+.content-inner{
     max-width: 949px;
     margin: 0 auto;
     padding: 3px 60px;
     display: flex;
+}
+
+.content-innerDutch{
+    padding: 3px 60px;
 }
 
 .Contents_Layout {
@@ -474,10 +476,6 @@ div[id$='Viet']{
     border: 1px solid black;
 }
 
-.Title_Layout p {
-    font-style: bold;
-}
-
 .Image_Layout {
     width: 49%;
     margin: 0px;
@@ -497,7 +495,6 @@ div[id$='Viet']{
 
 .content-inner .Mean_Layout {
     font-size: 30px;
-    font-style: bold;
 }
 
 .content-inner .Explain_Layout{
@@ -577,10 +574,8 @@ audio{
 }
 #charViet h1{
     background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
-    background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
     color:transparent;
     -webkit-background-clip: text;
-    background-clip: text;
 
     margin-left: 4.5cm;
     padding: 10px;
@@ -595,10 +590,8 @@ audio{
 }
 #wordViet h1{
     background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
-    background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
     color:transparent;
     -webkit-background-clip: text;
-    background-clip: text;
 
     margin-left: 5.5cm;
     padding: 10px;
@@ -613,10 +606,9 @@ audio{
 }
 #sentViet h1{
     background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
-    background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
     color:transparent;
     -webkit-background-clip: text;
-    background-clip: text;
+
 
     margin-left: 5.5cm;
     padding: 10px;
@@ -686,14 +678,20 @@ sent{
 /*end_Viet*/
 
 #databox {
-	text-align: center;
+    text-align: center;
 }
 
 .clearButton {
-	text-align: center;
-    border: 0.5px solid #262b37;
-    padding: 0;
+    text-align: center;
+    padding: 0px 0px 30px 50px;
     margin: 0;
+    float:left;
+    font-size: 14px;
+    color: #d5dae6;  
 }
 
+.clearButton:hover {
+    cursor: pointer;
+    color: #888;
+}
 
